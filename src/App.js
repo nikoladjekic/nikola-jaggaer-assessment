@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/header/header";
+import productData from "../data/data.json";
 
-const App = () => {
-	return (
+const App = () =>
+	productData && (
 		<>
-			<Header />
+			<Header title={productData.article.title} />
 			<div>Hello, world!</div>
 		</>
 	);
-};
 
 export default App;
