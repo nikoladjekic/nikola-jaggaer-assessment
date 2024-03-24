@@ -10,7 +10,7 @@ import { ReactComponent as DiscountIcon } from "../../../icons/discount.svg";
 import { ReactComponent as AddIcon } from "../../../icons/add.svg";
 
 const ProductOverview = ({
-	title,
+	shortDescription,
 	supplierLink,
 	supplierName,
 	starsRating,
@@ -27,7 +27,7 @@ const ProductOverview = ({
 			sx={{ lineHeight: "18px" }}
 			mb={1}
 		>
-			{title}
+			{shortDescription}
 		</Typography>
 	);
 
@@ -95,7 +95,7 @@ const ProductOverview = ({
 	);
 
 	return (
-		<Box width={450} height={500} display={"flex"} flexDirection={"column"}>
+		<Box width={450} height={350} display={"flex"} flexDirection={"column"}>
 			{renderTitle()}
 			{renderSupplier()}
 			{renderRating()}
