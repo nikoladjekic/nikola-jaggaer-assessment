@@ -7,8 +7,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Chip from "@mui/material/Chip";
-import { colors } from "../../../constants/colors";
 import { ReactComponent as AttachmentIcon } from "../../../icons/attachment.svg";
+import { colors } from "../../../constants/colors";
 import {
 	renderGraySubtitle,
 	renderRedUppercaseTitle,
@@ -22,24 +22,17 @@ const ProductDetails = ({ features, attachments, keywords }) => {
 					key={feature[0] + feature[1]}
 					sx={{ display: "list-item", padding: "0px" }}
 				>
-					<>
-						<Typography
-							sx={{ display: "inline" }}
-							variant="body2"
-							color={colors.gray}
-							component="div"
-							mr={1}
-						>
-							{feature[0]}:
-						</Typography>
-						<Typography
-							sx={{ display: "inline" }}
-							variant="body2"
-							component="div"
-						>
-							{feature[1]}
-						</Typography>
-					</>
+					<Typography
+						variant="body2"
+						color={colors.gray}
+						component="span"
+						mr={1}
+					>
+						{feature[0]}:
+					</Typography>
+					<Typography variant="body2" component="span">
+						{feature[1]}
+					</Typography>
 				</ListItem>
 			))}
 		</List>
@@ -65,6 +58,7 @@ const ProductDetails = ({ features, attachments, keywords }) => {
 	const renderKeywords = () =>
 		keywords.map((keyword) => (
 			<Chip
+				key={keyword}
 				label={keyword}
 				size="small"
 				sx={{ margin: "3px 10px 0 0" }}
@@ -72,7 +66,7 @@ const ProductDetails = ({ features, attachments, keywords }) => {
 		));
 
 	return (
-		<Box bgcolor={colors.white} width={400} p={3}>
+		<Box bgcolor={colors.white} width={400} p={2} mr={3}>
 			{renderRedUppercaseTitle("details")}
 			<Divider />
 			{renderGraySubtitle("features")}

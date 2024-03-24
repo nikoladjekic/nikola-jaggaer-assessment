@@ -5,7 +5,7 @@ import { renderRedUppercaseTitle } from "../../../constants/functions";
 const ProductDescription = ({ description }) => (
 	<>
 		{renderRedUppercaseTitle("description")}
-		<Typography variant="subtitle2" component="div" width={900}>
+		<Typography variant="subtitle2" component="div" width={920}>
 			{description}
 		</Typography>
 	</>
