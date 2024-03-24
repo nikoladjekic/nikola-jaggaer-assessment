@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import ProductOverview from "./top-section/product-overview";
 import ProductDescription from "./bottom-section/product-description";
 import ProductDetails from "./bottom-section/product-details";
+import ProductPricing from "./bottom-section/product-pricing";
 import { colors } from "../../constants/colors";
 
 const Product = ({ product }) => (
@@ -23,10 +24,19 @@ const Product = ({ product }) => (
 		</Box>
 		<Box py={5} px={3} bgcolor={colors.lightGray}>
 			<ProductDescription description={product.description_long} />
-			<Box mt={5}>
+			<Box mt={5} display={"flex"}>
 				<ProductDetails
 					features={product.features}
 					attachments={product.attachments}
+					keywords={product.keywords}
+				/>
+				<ProductPricing
+					minOrderQuantity={product.minimum_order_quantity}
+					shipping={product.transport_costs}
+					delivery={product.delivery_time}
+					quantityUnit={product.unit}
+					currency={product.currency}
+					priceBreaks={product.price_breaks}
 					keywords={product.keywords}
 				/>
 			</Box>
