@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
@@ -21,6 +21,8 @@ const ProductOverview = ({
 	quantity,
 	quantityUnit,
 }) => {
+	const [ratingValue, setRatingValue] = useState(starsRating);
+
 	const renderTitle = () => (
 		<Typography
 			variant="subtitle1"
@@ -47,7 +49,12 @@ const ProductOverview = ({
 
 	const renderRating = () => (
 		<Box component="div" mt={2} mb={3}>
-			<Rating value={starsRating} readOnly />
+			<Rating
+				value={ratingValue}
+				onChange={(event, newValue) => {
+					setRatingValue(newValue);
+				}}
+			/>
 		</Box>
 	);
 
