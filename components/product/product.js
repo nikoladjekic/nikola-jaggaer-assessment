@@ -1,5 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import ProductImages from "./top-section/product-images";
 import ProductOverview from "./top-section/product-overview";
 import ProductDescription from "./bottom-section/product-description";
 import ProductDetails from "./bottom-section/product-details";
@@ -8,7 +9,8 @@ import { colors } from "../../constants/colors";
 
 const Product = ({ product }) => (
 	<>
-		<Box my={10} pt={3}>
+		<Box mt={9} px={2} py={5} display={"flex"}>
+			<ProductImages images={product.images} />
 			<ProductOverview
 				shortDescription={product.description_short}
 				supplierLink={product.supplier_link}
