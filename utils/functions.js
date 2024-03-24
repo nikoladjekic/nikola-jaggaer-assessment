@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { colors } from "./colors";
+import { colors } from "./constants";
 
 export const renderRedUppercaseTitle = (title) => (
 	<Typography

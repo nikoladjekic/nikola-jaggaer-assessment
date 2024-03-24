@@ -2,12 +2,12 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { ReactComponent as PackageIcon } from "../../../icons/package.svg";
-import { colors } from "../../../constants/colors";
+import { colors } from "../../../utils/constants";
 
 const ProductImages = ({ images }) => {
 	const renderLeftStack = () => (
 		<Stack spacing={2} mr={2}>
-			{images.slice(1).map((image) => (
+			{images?.slice(1).map((image) => (
 				<Box
 					key={image}
 					width={100}

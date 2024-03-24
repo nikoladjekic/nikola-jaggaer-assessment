@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 import Rating from "@mui/material/Rating";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { colors } from "../../../constants/colors";
+import { colors } from "../../../utils/constants";
 import { ReactComponent as DiscountIcon } from "../../../icons/discount.svg";
 import { ReactComponent as AddIcon } from "../../../icons/add.svg";
 

@@ -8,11 +8,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Chip from "@mui/material/Chip";
 import { ReactComponent as AttachmentIcon } from "../../../icons/attachment.svg";
-import { colors } from "../../../constants/colors";
+import { colors } from "../../../utils/constants";
 import {
 	renderGraySubtitle,
 	renderRedUppercaseTitle,
-} from "../../../constants/functions";
+} from "../../../utils/functions";
 
 const ProductDetails = ({ features, attachments, keywords }) => {
 	const renderFeaturesList = () => (

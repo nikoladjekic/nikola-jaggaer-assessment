@@ -5,12 +5,12 @@ import ProductOverview from "./top-section/product-overview";
 import ProductDescription from "./bottom-section/product-description";
 import ProductDetails from "./bottom-section/product-details";
 import ProductPricing from "./bottom-section/product-pricing";
-import { colors } from "../../constants/colors";
+import { colors } from "../../utils/constants";
 
 const Product = ({ product }) => (
 	<>
 		<Box mt={9} px={2} py={5} display={"flex"}>
-			<ProductImages images={product.images} />
+			<ProductImages images={product?.images} />
 			<ProductOverview
 				shortDescription={product.description_short}
 				supplierLink={product.supplier_link}

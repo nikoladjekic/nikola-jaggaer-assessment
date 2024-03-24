@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { renderRedUppercaseTitle } from "../../../constants/functions";
+import { renderRedUppercaseTitle } from "../../../utils/functions";
 
 const ProductDescription = ({ description }) => (
 	<>

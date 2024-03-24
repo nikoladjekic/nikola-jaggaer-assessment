@@ -8,11 +8,11 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
-import { colors } from "../../../constants/colors";
+import { colors } from "../../../utils/constants";
 import {
 	renderGraySubtitle,
 	renderRedUppercaseTitle,
-} from "../../../constants/functions";
+} from "../../../utils/functions";
 
 const ProductPricing = ({
 	minOrderQuantity,
