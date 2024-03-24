@@ -7,8 +7,9 @@ import { colors } from "../../../constants/colors";
 const ProductImages = ({ images }) => {
 	const renderLeftStack = () => (
 		<Stack spacing={2} mr={2}>
-			{images.slice(1).map(() => (
+			{images.slice(1).map((image) => (
 				<Box
+					key={image}
 					width={100}
 					height={100}
 					sx={{
