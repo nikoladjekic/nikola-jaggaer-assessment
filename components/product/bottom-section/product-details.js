@@ -9,33 +9,14 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Chip from "@mui/material/Chip";
 import { colors } from "../../../constants/colors";
 import { ReactComponent as AttachmentIcon } from "../../../icons/attachment.svg";
+import {
+	renderGraySubtitle,
+	renderRedUppercaseTitle,
+} from "../../../constants/functions";
 
 const ProductDetails = ({ features, attachments, keywords }) => {
-	const renderRedTitle = (title) => (
-		<Typography
-			variant="subtitle2"
-			sx={{ color: colors.red, textTransform: "uppercase" }}
-			p={2}
-		>
-			{title}
-		</Typography>
-	);
-
-	const renderGraySubtitle = (subtitle) => (
-		<Typography
-			variant="subtitle2"
-			sx={{
-				color: colors.gray,
-				padding: "16px 16px 0 16px",
-				textTransform: "capitalize",
-			}}
-		>
-			{subtitle}
-		</Typography>
-	);
-
 	const renderFeaturesList = () => (
-		<List sx={{ padding: "0 30px", listStyleType: "disc" }}>
+		<List sx={{ padding: "0 16px", listStyleType: "disc" }}>
 			{Object.entries(features).map((feature) => (
 				<ListItem
 					key={feature[0] + feature[1]}
@@ -65,7 +46,7 @@ const ProductDetails = ({ features, attachments, keywords }) => {
 	);
 
 	const renderAttachmentsList = () => (
-		<List sx={{ padding: "0 16px" }}>
+		<List sx={{ padding: "0" }}>
 			{attachments.map((attachment) => (
 				<ListItem key={attachment.file_name} sx={{ padding: "0px" }}>
 					<ListItemIcon sx={{ minWidth: "18px" }}>
@@ -81,22 +62,19 @@ const ProductDetails = ({ features, attachments, keywords }) => {
 		</List>
 	);
 
-	const renderKeywords = () => (
-		<Box ml={2}>
-			{keywords.map((keyword) => (
-				<Chip
-					label={keyword}
-					size="small"
-					sx={{ marginRight: "10px" }}
-				/>
-			))}
-		</Box>
-	);
+	const renderKeywords = () =>
+		keywords.map((keyword) => (
+			<Chip
+				label={keyword}
+				size="small"
+				sx={{ margin: "3px 10px 0 0" }}
+			/>
+		));
 
 	return (
-		<Box bgcolor={colors.white} width={400} pb={3}>
-			{renderRedTitle("details")}
-			<Divider variant="middle" />
+		<Box bgcolor={colors.white} width={400} p={3}>
+			{renderRedUppercaseTitle("details")}
+			<Divider />
 			{renderGraySubtitle("features")}
 			{renderFeaturesList()}
 			{renderGraySubtitle("attachments")}
