@@ -19,6 +19,7 @@ const ProductOverview = ({
 	transportCosts,
 	vatPercent,
 	quantity,
+	quantityUnit,
 }) => {
 	const renderTitle = () => (
 		<Typography
@@ -37,7 +38,9 @@ const ProductOverview = ({
 				by
 			</Typography>
 			<Link href={supplierLink} underline="none" pl={1}>
-				{supplierName}
+				<Typography variant="body2" sx={{ display: "inline" }}>
+					{supplierName}
+				</Typography>
 			</Link>
 		</Box>
 	);
@@ -80,7 +83,7 @@ const ProductOverview = ({
 				sx={{ width: "60px" }}
 			/>
 			<Typography variant="body2" component="span" ml={1} mr={3}>
-				PCE
+				{quantityUnit}
 			</Typography>
 			<Button
 				variant="contained"
