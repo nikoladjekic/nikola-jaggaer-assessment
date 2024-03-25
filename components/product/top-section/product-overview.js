@@ -105,7 +105,7 @@ const ProductOverview = ({
 	);
 
 	return (
-		<Box width={450} height={350} display={"flex"} flexDirection={"column"}>
+		<Box width={400} height={350} display={"flex"} flexDirection={"column"}>
 			{renderTitle()}
 			{renderSupplier()}
 			{renderRating()}
