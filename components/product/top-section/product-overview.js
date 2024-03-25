@@ -97,7 +97,7 @@ const ProductOverview = ({
 				size="small"
 				color="error"
 				sx={{ background: colors.red, textTransform: "none" }}
-				startIcon={<AddIcon width="20px" fill="#fff" />}
+				startIcon={<AddIcon width="20px" fill={colors.white} />}
 			>
 				Add to cart
 			</Button>
