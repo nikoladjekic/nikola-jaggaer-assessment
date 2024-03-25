@@ -1,37 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { ReactComponent as PackageIcon } from "../../../icons/package.svg";
 import { colors } from "../../../utils/constants";
 
 const ProductImages = ({ images }) => {
-	const renderLeftStack = () => (
-		<Stack spacing={2} mr={2}>
-			{images?.slice(1).map((image) => (
-				<Box
-					key={image}
-					width={100}
-					height={100}
-					sx={{
-						border: `1px solid ${colors.lightGray}`,
-						"&:hover": {
-							cursor: "pointer",
-							borderColor: colors.mediumGray,
-						},
-					}}
-				>
-					<Box width={40} sx={{ margin: "30px" }}>
-						<PackageIcon fill={colors.lightGray} />
-					</Box>
-				</Box>
-			))}
-		</Stack>
-	);
+	const [selectedImage, setSelectedImage] = useState(null);
 
-	const renderSelectedImage = () => (
+	useEffect(() => {
+		if (images?.length) setSelectedImage(images[0]);
+	}, []);
+
+	const getPackageImageBox = ({ key, boxSize, iconWidth, iconMargin }) => (
 		<Box
-			width={350}
-			height={350}
+			key={key}
+			width={boxSize}
+			height={boxSize}
 			sx={{
 				border: `1px solid ${colors.lightGray}`,
 				"&:hover": {
@@ -40,7 +24,7 @@ const ProductImages = ({ images }) => {
 				},
 			}}
 		>
-			<Box width={120} sx={{ margin: "115px" }}>
+			<Box width={iconWidth} sx={{ margin: `${iconMargin}px` }}>
 				<PackageIcon fill={colors.lightGray} />
 			</Box>
 		</Box>
@@ -48,8 +32,23 @@ const ProductImages = ({ images }) => {
 
 	return (
 		<Box display={"flex"} mr={3}>
-			{renderLeftStack()}
-			{renderSelectedImage()}
+			<Stack spacing={2} mr={2}>
+				{images
+					.filter((img) => img !== selectedImage)
+					.map((image) =>
+						getPackageImageBox({
+							key: image,
+							boxSize: 120,
+							iconWidth: 40,
+							iconMargin: 40,
+						})
+					)}
+			</Stack>
+			{getPackageImageBox({
+				boxSize: 350,
+				iconWidth: 120,
+				iconMargin: 115,
+			})}
 		</Box>
 	);
 };
